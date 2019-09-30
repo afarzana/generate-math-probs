@@ -1,5 +1,5 @@
 // Default minimum number of operators
-const defaultMinOperators = 1;
+const defaultMinOperators = 2;
 
 // Default number by which the minimum number of operators is to be incremented by to generate the default maximum
 // number of operators
@@ -43,8 +43,9 @@ module.exports = {
     generateBasicMathProblems: function(numberOfProblems, minOperators, maxOperators){
 
         // Check input parameter: Number of problems to generate
-        let numProblems = parseInt(numberOfProblems);
-        if(isNaN(numProblems) || (numProblems < minNumOfProblems) || (numProblems > maxNumOfProblems)){
+        let numProblems = Number(numberOfProblems);
+        if(isNaN(numProblems) || !Number.isInteger(numProblems) || (numProblems < minNumOfProblems) ||
+            (numProblems > maxNumOfProblems)){
             throw new Error(" The specified number of problems to generate has to be an integer >= " +
                 minNumOfProblems + " and <= " + maxNumOfProblems);
         }
@@ -55,8 +56,8 @@ module.exports = {
             minOp = defaultMinOperators;
         }
         else{
-            minOp = parseInt(minOperators);
-            if(isNaN(minOp) || (minOp < minNumOperators)){
+            minOp = Number(minOperators);
+            if(isNaN(minOp) || !Number.isInteger(minOp) || (minOp < minNumOperators)){
                 throw new Error("The specified minimum number of operators has to be an integer >= " + minNumOperators);
             }
         }
@@ -68,8 +69,8 @@ module.exports = {
             }
         }
         else{
-            maxOp = parseInt(maxOperators);
-            if(isNaN(maxOp) || (maxOp < minNumOperators)){
+            maxOp = Number(maxOperators);
+            if(isNaN(maxOp) || !Number.isInteger(maxOp) || (maxOp < minNumOperators)){
                 throw new Error("The specified maximum number of operators has to be an integer >= " + minNumOperators);
             }
         }
