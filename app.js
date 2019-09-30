@@ -21,8 +21,8 @@ app.get('/api/:numberOfProblems', function(req, res, next) {
 
 // Handle errors
 app.use((req, res, next) => {
-    const err = new Error('Not found. Request to the api should be framed as http://your-url/api/' +
-        '[Number of problems to generate]?min=[minimum number of operators]&max=[maximum number of operators]');
+    const err = new Error('Not found. Request to the api should be framed as https://generate-math-problems.herokuapp.com/api/' +
+        '{Number of problems to generate}?min={minimum number of operators}&max={maximum number of operators}');
     err.status = 404;
     next(err);
 });
