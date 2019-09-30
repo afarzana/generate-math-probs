@@ -2,7 +2,7 @@
   "name": "generate-math-probs",
   "version": "1.0.0",
   "description": "McDaniel New Grad Coding Challenge (A REST API that randomly generates basic math problems)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
